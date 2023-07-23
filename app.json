@@ -1,24 +1,33 @@
 {
-  "name": "Miku-MD",
-  "description": "A whatsApp bot based on Baileys linrary with Multi Device support",
-  "repository": "https://github.com/FantoX001/Miku-MD",
-  "logo": "https://wallpapercave.com/wp/wp10524580.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
+	"name": "Deploy",
+	"description": "inrl-md",
+	"keywords": [
+		"inrl"
+	],
+	"repository": "https://github.com/inrl-official/inrl-bot-md",
+	"stack": "container",
+	"env": {
+	"SESSION_ID": {inrl~68a9cT5wq824e702405ad59f11fc11366f2d,
+		"description": "to run the bot",
+		"required": true
+		},
+       "HEROKU_API_KEY": {d33f3612-f291-41cb-8097-ebff8201e078,
+            "description": "For updating bot and setting vars remotely",
+            "required": true
+        },
+        "HEROKU_APP_NAME": {nourou,
+            "description": "Exact name which you gave at the top",
+            "required": true
+        },
+	"MONGO_URL": {
+		"description": "enter db url to work the bot without limit",
+		"required": false
+		}
+	},
+"buildpacks": [{
+      "url": "heroku-community/apt"
+      },
+      {
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    }
-  ],
-   "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
-    }
+      }]
 }
